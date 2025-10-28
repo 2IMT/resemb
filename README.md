@@ -13,6 +13,7 @@ Tool to bake assets into your executable.
     - [Using Without CMake](#using-without-cmake)
 - [API Overview](#api-overview)
 - [CLI Overview](#cli-overview)
+- [Lookup Efficiency](#lookup-efficiency)
 - [License](#license)
 
 ## Overview
@@ -151,6 +152,20 @@ resemb_gen -o resemb_impl.c assets/foo assets/bar
 # This will strip `assets/` prefix from all resource names
 resemb_gen -o resemb_impl.c -s assets/ assets/foo assets/bar
 ```
+
+## Lookup Efficiency
+
+`resemb` uses binary search to look up resources. This approach achieves
+a good balance between runtime efficiency and implementation simplicity.
+While a hash table could offer faster lookups, binary search is both simple
+and extremely efficient for the intended use case.
+
+With 20 000 embedded resources, lookups complete in about 14 comparisons.
+Even for projects embedding that many assets, the cost of binary search remains
+negligible.
+
+If you plan to embed a significantly larger number of resources, you should
+consider a different resource management solution instead.
 
 ## License
 
