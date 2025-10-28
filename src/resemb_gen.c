@@ -6,6 +6,8 @@
 #include <errno.h>
 #include <stdarg.h>
 
+#define VERSION "0.1.0"
+
 #define STREQ(l, r) (strcmp(l, r) == 0)
 #define WRITE_OUT(...)                               \
         do {                                         \
@@ -24,6 +26,8 @@ static size_t file_count = 0;
 static FILE* output_file = NULL;
 
 static void help(void) {
+  printf("resemb_gen v" VERSION "\n");
+  printf("\n");
   printf("USAGE:\n");
   printf("    %s [OPTIONS] <INPUT_FILES...>\n", program_name);
   printf("    %s -o resemb.c file_a.txt file_b.txt\n", program_name);
