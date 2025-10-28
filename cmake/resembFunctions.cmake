@@ -5,19 +5,19 @@
 # Usage:
 #   resemb_embed(
 #     TARGET <target_name>
-#     ASSETS <file1> <file2> ...
+#     RESOURCES <file1> <file2> ...
 #     [STRIP_PREFIX <prefix_path>]
 #   )
 
 function(resemb_embed)
-    cmake_parse_arguments(RESEMB "" "TARGET;STRIP_PREFIX" "ASSETS" ${ARGN})
+    cmake_parse_arguments(RESEMB "" "TARGET;STRIP_PREFIX" "RESOURCES" ${ARGN})
 
     if(NOT RESEMB_TARGET)
         message(FATAL_ERROR "resemb_embed: TARGET is required")
     endif()
 
-    if(NOT RESEMB_ASSETS)
-        message(FATAL_ERROR "resemb_embed: ASSETS is required")
+    if(NOT RESEMB_RESOURCES)
+        message(FATAL_ERROR "resemb_embed: RESOURCES is required")
     endif()
 
     if(TARGET resemb_gen)
@@ -37,14 +37,14 @@ function(resemb_embed)
     if (RESEMB_STRIP_PREFIX)
         list(APPEND cmd --strip-prefix "${RESEMB_STRIP_PREFIX}")
     endif()
-    list(APPEND cmd ${RESEMB_ASSETS})
+    list(APPEND cmd ${RESEMB_RESOURCES})
 
     add_custom_command(
         OUTPUT "${output_c}"
         COMMAND ${cmd}
         WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-        DEPENDS ${RESEMB_ASSETS} ${RESEMB_GEN_EXECUTABLE}
-        COMMENT "Generating `resemb` resources for `${RESEMB_TARGET}`"
+        DEPENDS ${RESEMB_RESOURCES} ${RESEMB_GEN_EXECUTABLE}
+        COMMENT "resemb_embed: Embedding in `${RESEMB_TARGET}`"
         VERBATIM
     )
 

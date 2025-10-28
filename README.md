@@ -91,7 +91,7 @@ find_package(resemb REQUIRED)
 
 resemb_embed(
     TARGET resemb_test
-    ASSETS "assets/text.txt" "assets/player.png"
+    RESOURCES "assets/text.txt" "assets/player.png"
     STRIP_PREFIX "assets/" # Optional, strips prefixes from resource names
 )
 ```
