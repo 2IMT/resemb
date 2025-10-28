@@ -99,6 +99,10 @@ resemb_embed(
 This will automatically regenerate and link the `resemb` implementation every
 time any of the assets changes.
 
+**Note:** if you want to use `resemb` as a submodule in your project, you can
+just replace `find_package(resemb REQUIRED)` with
+`add_subdirectory("<path-to-resemb>")`.
+
 ### Using Without CMake
 
 `resemb`'s build process is extremely simple:
