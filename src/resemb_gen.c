@@ -296,6 +296,8 @@ static void parse_args(int argc, char** argv) {
         prefix_len = strlen(strip_prefix);
       } else {
         fprintf(stderr, "resemb_gen: error: invalid argument `%s`\n", arg);
+        hint();
+        exit(1);
       }
     } else {
       files = (const char**) argv + i;
