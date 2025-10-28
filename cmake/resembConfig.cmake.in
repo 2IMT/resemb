@@ -1,0 +1,7 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/resembTargets.cmake")
+include("${CMAKE_CURRENT_LIST_DIR}/resembFunctions.cmake")
+
+# Optionally provide convenient variables
+set(RESEMB_GEN_EXECUTABLE "@PACKAGE_BIN_INSTALL_DIR@/resemb_gen")
