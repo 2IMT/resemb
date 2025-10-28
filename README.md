@@ -85,6 +85,21 @@ resemb_embed(
 This will automatically regenerate and link the `resemb` implementation every
 time any of the assets changes.
 
+### Using Without CMake
+
+`resemb`'s build process is extremely simple:
+
+```bash
+# Build `resemb_gen`
+gcc -o resemb_gen src/resemb_gen.c
+
+# Generate `resemb` implementation with baked assets
+./resemb_gen -o resemb_impl.c "assets/text.txt" "assets/player.png" "assets/music.mp3"
+
+# Build your executable and link the `resemb` implementation
+gcc -o main main.c resemb_impl.c
+```
+
 ## API Overview
 
 ```c
