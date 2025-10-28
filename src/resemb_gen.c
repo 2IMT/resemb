@@ -1,3 +1,7 @@
+// Copyright (c) 2025 2IMT
+// Licensed under the MIT License.
+// See LICENSE file in the project root for details.
+
 #include <stdio.h>
 #include <string.h>
 #include <stddef.h>

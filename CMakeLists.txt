@@ -1,3 +1,7 @@
+# Copyright (c) 2025 2IMT
+# Licensed under the MIT License.
+# See LICENSE file in the project root for details.
+
 cmake_minimum_required(VERSION 3.12)
 
 project(resemb VERSION 0.1.0 LANGUAGES C)
