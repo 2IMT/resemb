@@ -2,6 +2,19 @@
 
 Tool to bake assets into your executable.
 
+## Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Usage](#usage)
+    - [Installation](#installation)
+    - [Basic Usage](#basic-usage)
+    - [CMake Integration](#cmake-integration)
+    - [Using Without CMake](#using-without-cmake)
+- [API Overview](#api-overview)
+- [CLI Overview](#cli-overview)
+- [License](#license)
+
 ## Overview
 
 `resemb` is a lightweight asset embedding tool for C projects. It allows you to
